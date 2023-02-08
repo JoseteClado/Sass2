@@ -1,3 +1,51 @@
 /* ********* */
 /* @HOME */
 /* ********* */
+
+body{
+    background-color: #E8E6E0;
+    
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:  20px repeat(2,1fr);
+    height: 100vh;
+    grid-column-gap: 50px;
+    grid-row-gap: 80px;
+    box-sizing: border-box;
+    padding: 20px 240px;
+}
+
+
+
+@each $color, $valor in $listaColores {
+    .polaroid_#{$color}{
+        background-color: $valor;
+        
+    }
+    .polaroid_#{$color}>.texto::before{
+        content: '#{$valor}';
+    }
+}
+
+h4{
+    grid-column: 1/4;
+    text-align: center;
+}
+
+.polaroid{
+border: 14px solid white;
+display: flex;
+flex-direction: row;
+align-items: flex-end;
+text-align: center;
+}
+
+figcaption{
+    background-color: white;
+    width: 100%;
+    padding-top: 10px;
+}
+
